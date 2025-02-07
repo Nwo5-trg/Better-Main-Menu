@@ -1,0 +1,315 @@
+{
+	"geode": "4.2.0",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074"
+	},
+	"id": "nwo5.bettermainmenu",
+	"name": "Nwo5's Better Main Menu",
+	"version": "v1.0.0",
+	"developer": "Nwo5",
+	"description": "Revamps the main menu",
+	"dependencies": [
+        {
+            "id": "geode.node-ids",
+			"version": ">=v1.19.0",
+			"importance": "required"
+        },
+		{
+            "id": "geode.texture-loader",
+			"version": ">=v1.7.0",
+			"importance": "recommended"
+        }
+    ],
+	"incompatibilities": [
+        {
+            "id": "ninxout.redash",
+			"version": ">=v1.2.0",
+			"importance": "conflicting"
+        }
+    ],
+	"tags": [
+		"interface",
+		"customization",
+		"enhancement",
+		"offline"
+	],
+	"resources": {
+		"sprites": [
+			"resources/*.png"
+		]
+	},
+	"settings": {
+		"main-menu-title": {
+			"type": "title",
+			"name": "Main Menu"
+		},
+		"main-menu-enabled": {
+			"type": "bool",
+			"name": "Enable Main Menu Changes.",
+			"default": true
+		},
+		"shift-profile-button": {
+			"type": "bool",
+			"name": "Shift Profile Button",
+			"description": "Moves the profile button to be more aligned with slots.",
+			"default": false
+		},
+		"menu-font": {
+			"type": "int",
+    		"name": "Menu Font",
+			"description": "Sets the font for the buttons on the main menu. 0, is default, 1-59 are all the editor fonts, 60 is 'chatFont', 61 is 'goldFont'",
+			"default": 0,
+			"min": 0,
+            "max": 61
+		},
+		"button-labels": {
+			"type": "title",
+			"name": "Button Labels",
+			"description": "Replace the names of all the buttons that appear on your main menu."
+		},
+		"play-label": {
+			"type": "string",
+    		"name": "'Play' Label",
+    		"default": "Play"
+		},
+		"online-label": {
+			"type": "string",
+    		"name": "'Online' Label",
+    		"default": "Online"
+		},
+		"icon-label": {
+			"type": "string",
+    		"name": "'Icon' Label",
+    		"default": "Icon"
+		},
+		"settings-label": {
+			"type": "string",
+    		"name": "'Settings' Label",
+    		"default": "Settings"
+		},
+		"stats-label": {
+			"type": "string",
+    		"name": "'Stats' Label",
+    		"default": "Stats"
+		},
+		"quit-label": {
+			"type": "string",
+    		"name": "'Quit' Label",
+    		"default": "Quit"
+		},
+		"chest-label": {
+			"type": "string",
+    		"name": "'Chest' Label",
+    		"default": "Chest"
+		},
+		"create-label": {
+			"type": "string",
+    		"name": "'Create' Label",
+    		"default": "Create"
+		},
+		"search-label": {
+			"type": "string",
+    		"name": "'Search' Label",
+    		"default": "Search"
+		},
+		"daily-label": {
+			"type": "string",
+    		"name": "'Daily' Label",
+    		"default": "Daily"
+		},
+		"weekly-label": {
+			"type": "string",
+    		"name": "'Weekly' Label",
+    		"default": "Weekly"
+		},
+		"mods-label": {
+			"type": "string",
+    		"name": "'Mods' Label",
+    		"default": "Mods"
+		},
+		"textures-label": {
+			"type": "string",
+    		"name": "'Textures' Label",
+    		"default": "Textures"
+		},
+		"globed-label": {
+			"type": "string",
+    		"name": "'Globed' Label",
+    		"default": "Globed"
+		},
+		"widgets-title": {
+			"type": "title",
+			"name": "Widgets",
+			"description": "The little buttons on the side of your profile. This uses a child system so buttons will snap to the bottom of whatever side they are on"
+		},
+		"widget-button-one": {
+			"type": "string",
+    		"name": "Slot 1",
+    		"default": "Empty",
+			"one-of": ["Mod Settings", "Alt Mod Settings", "Refresh Menu", "Search Filter", "Empty"]
+		},
+		"widget-button-two": {
+			"type": "string",
+    		"name": "Slot 2",
+    		"default": "Empty",
+			"one-of": ["Mod Settings", "Alt Mod Settings", "Search Filter", "Alt Search Filter", "Refresh Menu", "Empty"]
+		},
+		"widget-button-three": {
+			"type": "string",
+    		"name": "Slot 3",
+    		"default": "Empty",
+			"one-of": ["Mod Settings", "Alt Mod Settings", "Search Filter", "Alt Search Filter", "Refresh Menu", "Empty"]
+		},
+		"widget-button-four": {
+			"type": "string",
+    		"name": "Slot 4",
+    		"default": "Mod Settings",
+			"one-of": ["Mod Settings", "Alt Mod Settings", "Search Filter", "Alt Search Filter", "Refresh Menu", "Empty"]
+		},
+		"widget-button-five": {
+			"type": "string",
+    		"name": "Slot 5",
+    		"default": "Refresh Menu",
+			"one-of": ["Mod Settings", "Alt Mod Settings", "Search Filter", "Alt Search Filter", "Refresh Menu", "Empty"]
+		},
+		"widget-button-six": {
+			"type": "string",
+    		"name": "Slot 6",
+    		"default": "Empty",
+			"one-of": ["Mod Settings", "Alt Mod Settings", "Search Filter", "Alt Search Filter", "Refresh Menu", "Empty"]
+		},
+		"settings-button-mod": {
+			"type": "string",
+    		"name": "Settings Button Mod",
+    		"default": "nwo5.bettermainmenu",
+			"filter": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.-"
+		},
+		"alt-settings-button-mod": {
+			"type": "string",
+    		"name": "Alternate Settings Button Mod",
+			"description": "Incase you want 2 ig.",
+    		"default": "insert.modidhere",
+			"filter": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.-"
+		},
+		"search-filter": {
+			"type": "string",
+    		"name": "Search Filter",
+			"description": "Either add a level name or id.",
+    		"default": "Retray",
+			"filter": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
+		},
+		"alt-search-filter": {
+			"type": "string",
+    		"name": "Alternate Search Filter",
+			"description": "Incase you want 2 ig.",
+    		"default": "The Nightmare",
+			"filter": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
+		},
+		"left-tab-title": {
+			"type": "title",
+			"name": "Left Tab"
+		},
+		"left-tab-slot-one": {
+			"type": "string",
+    		"name": "Slot 1",
+    		"default": "Play",
+			"one-of": ["Play", "Online", "Icon", "Settings", "Stats", "Quit", "Chest", "Create", "Search", "Daily", "Weekly", "Mods", "Textures", "Globed", "Empty"]
+		},
+		"left-tab-slot-two": {
+			"type": "string",
+    		"name": "Slot 2",
+    		"default": "Online",
+			"one-of": ["Play", "Online", "Icon", "Settings", "Stats", "Quit", "Chest", "Create", "Search", "Daily", "Weekly", "Mods", "Textures", "Globed", "Empty"]
+		},
+		"left-tab-slot-three": {
+			"type": "string",
+    		"name": "Slot 3",
+    		"default": "Icon",
+			"one-of": ["Play", "Online", "Icon", "Settings", "Stats", "Quit", "Chest", "Create", "Search", "Daily", "Weekly", "Mods", "Textures", "Globed", "Empty"]
+		},
+		"left-tab-slot-four": {
+			"type": "string",
+    		"name": "Slot 4",
+    		"default": "Settings",
+			"one-of": ["Play", "Online", "Icon", "Settings", "Stats", "Quit", "Chest", "Create", "Search", "Daily", "Weekly", "Mods", "Textures", "Globed", "Empty"]
+		},
+		"left-tab-slot-five": {
+			"type": "string",
+    		"name": "Slot 5",
+    		"default": "Stats",
+			"one-of": ["Play", "Online", "Icon", "Settings", "Stats", "Quit", "Chest", "Create", "Search", "Daily", "Weekly", "Mods", "Textures", "Globed", "Empty"]
+		},
+		"left-tab-slot-six": {
+			"type": "string",
+    		"name": "Slot 6",
+    		"default": "Empty",
+			"one-of": ["Play", "Online", "Icon", "Settings", "Stats", "Quit", "Chest", "Create", "Search", "Daily", "Weekly", "Mods", "Textures", "Globed", "Empty"]
+		},
+		"left-tab-slot-seven": {
+			"type": "string",
+    		"name": "Slot 7",
+    		"default": "Empty",
+			"one-of": ["Play", "Online", "Icon", "Settings", "Stats", "Quit", "Chest", "Create", "Search", "Daily", "Weekly", "Mods", "Textures", "Globed", "Empty"]
+		},
+		"left-tab-slot-eight": {
+			"type": "string",
+    		"name": "Slot 8",
+    		"default": "Mods",
+			"one-of": ["Play", "Online", "Icon", "Settings", "Stats", "Quit", "Chest", "Create", "Search", "Daily", "Weekly", "Mods", "Textures", "Globed", "Empty"]
+		},
+		"left-tab-slot-nine": {
+			"type": "string",
+    		"name": "Slot 9",
+    		"default": "Textures",
+			"one-of": ["Play", "Online", "Icon", "Settings", "Stats", "Quit", "Chest", "Create", "Search", "Daily", "Weekly", "Mods", "Textures", "Globed", "Empty"]
+		},
+		"right-tab-title": {
+			"type": "title",
+			"name": "Right Tab"
+		},
+		"right-tab-slot-one": {
+			"type": "string",
+    		"name": "Slot 1",
+    		"default": "Create",
+			"one-of": ["Play", "Online", "Icon", "Settings", "Stats", "Quit", "Chest", "Create", "Search", "Daily", "Weekly", "Mods", "Textures", "Globed", "Empty"]
+		},
+		"right-tab-slot-two": {
+			"type": "string",
+    		"name": "Slot 2",
+    		"default": "Search",
+			"one-of": ["Play", "Online", "Icon", "Settings", "Stats", "Quit", "Chest", "Create", "Search", "Daily", "Weekly", "Mods", "Textures", "Globed", "Empty"]
+		},
+		"right-tab-slot-three": {
+			"type": "string",
+    		"name": "Slot 3",
+    		"default": "Chest",
+			"one-of": ["Play", "Online", "Icon", "Settings", "Stats", "Quit", "Chest", "Create", "Search", "Daily", "Weekly", "Mods", "Textures", "Globed", "Empty"]
+		},
+		"right-tab-slot-four": {
+			"type": "string",
+    		"name": "Slot 4",
+    		"default": "Daily",
+			"one-of": ["Play", "Online", "Icon", "Settings", "Stats", "Quit", "Chest", "Create", "Search", "Daily", "Weekly", "Mods", "Textures", "Globed", "Empty"]
+		},
+		"right-tab-slot-five": {
+			"type": "string",
+    		"name": "Slot 5",
+    		"default": "Weekly",
+			"one-of": ["Play", "Online", "Icon", "Settings", "Stats", "Quit", "Chest", "Create", "Search", "Daily", "Weekly", "Mods", "Textures", "Globed", "Empty"]
+		},
+		"right-tab-slot-six": {
+			"type": "string",
+    		"name": "Slot 6",
+    		"default": "Quit",
+			"one-of": ["Play", "Online", "Icon", "Settings", "Stats", "Quit", "Chest", "Create", "Search", "Daily", "Weekly", "Mods", "Textures", "Globed", "Empty"]
+		},
+		"right-tab-slot-seven": {
+			"type": "string",
+    		"name": "Slot 7",
+    		"default": "Empty",
+			"one-of": ["Play", "Online", "Icon", "Settings", "Stats", "Quit", "Chest", "Create", "Search", "Daily", "Weekly", "Mods", "Textures", "Globed", "Empty"]
+		}
+	}
+}
