@@ -1,5 +1,6 @@
 #include "include.hpp"
 // btw half way thru this this project i realised i dont have to add cocos2d:: to the start of everything but im just keeping it that way because i dont wanna change it
+// remind me to clean up this code next feature update i do because i can make this a lot cleaner
 // variables
 bool modCompatibility = false;
 bool searchFilter = false;
@@ -59,16 +60,30 @@ class $modify(MenuLayerUwU, MenuLayer) {
         if (auto mod = Loader::get()->getLoadedMod(Mod::get()->getSettingValue<std::string>("settings-button-mod"))) {
             geode::openSettingsPopup(mod);
         }
+        else {
+            FLAlertLayer::create(
+                "Invalid Mod ID",
+                "what the title says",
+                "OK"
+            )->show();
+        }
     }
 
     void openModSettingsAlt(CCObject* sender) {
         if (auto mod = Loader::get()->getLoadedMod(Mod::get()->getSettingValue<std::string>("alt-settings-button-mod"))) {
             geode::openSettingsPopup(mod);
         }
+        else {
+            FLAlertLayer::create(
+                "Invalid Mod ID",
+                "what the title says",
+                "OK"
+            )->show();
+        }
     }
 
     void setSearch(CCObject* sender) {
-        // idk if this will work on windows, genuinely no clue if it will
+        // idk if this will work on windows, uses out of line thing idk if thatll work or not
         searchFilter = true;
         searchFilterAlt = false;
         auto creatorLayer = CreatorLayer::create();
@@ -257,8 +272,7 @@ if (Mod::get()->getSettingValue<bool>("main-menu-enabled")) {
     this->getChildByID("main-title")->setPosition(cocos2d::CCPoint(170, 290));
     this->getChildByID("main-title")->setScale(0.75);
     // font shit
-    // @geode-ignore(unknown-setting)
-    int fontNumber = Mod::get()->getSettingValue<int>("menu-font");
+    int fontNumber = Mod::get()->getSettingValue<int64_t>("menu-font");
     std::string font;
     float fontScale;
 

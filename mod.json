@@ -7,7 +7,7 @@
 	},
 	"id": "nwo5.bettermainmenu",
 	"name": "Nwo5's Better Main Menu",
-	"version": "v1.0.0",
+	"version": "v1.0.1",
 	"developer": "Nwo5",
 	"description": "Revamps the main menu",
 	"dependencies": [
@@ -187,14 +187,14 @@
 			"type": "string",
     		"name": "Settings Button Mod",
     		"default": "nwo5.bettermainmenu",
-			"filter": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.-"
+			"filter": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.-_"
 		},
 		"alt-settings-button-mod": {
 			"type": "string",
     		"name": "Alternate Settings Button Mod",
 			"description": "Incase you want 2 ig.",
     		"default": "insert.modidhere",
-			"filter": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.-"
+			"filter": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.-_"
 		},
 		"search-filter": {
 			"type": "string",
